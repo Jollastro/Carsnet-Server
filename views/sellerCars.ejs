@@ -1,0 +1,35 @@
+<h1>ELENCO MACCHINE</h1>
+
+<head>
+	<style>
+		table, th {
+			border: 2px solid black;
+		}
+	</style>
+</head>
+
+<body>
+	<table style="width:100%">
+		<tr>
+			<th>Marca</th>
+			<th>Modello</th>
+			<th>Tipo</th>
+			<th>Carburazione</th>
+			<th>Prezzo</th>
+			<th>Concessionaria</th>
+		</tr>
+		<% sellerCars.forEach(function(cars)  { %>
+		<tr align="center">
+			<td><hr/><%= cars.marca %><hr/></td>
+			<td><hr/><%= cars.modello %><hr/></td>
+			<td><hr/><%= cars.tipo %><hr/></td>
+			<td><hr/><%= cars.carburazione %><hr/></td>
+			<td><hr/><%= cars.prezzo %> &euro;<hr/></td>
+			<td><hr/><%= cars.concessionaria %><hr/></td>
+		</tr>
+		<% }); %>
+	</table>
+
+	<H1>MACCHINE VENDITORE</H1>
+	<button onclick="window.location.href='/addCar';">Aggiungi Macchina</button>
+</body>

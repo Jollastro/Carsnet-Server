@@ -1,0 +1,72 @@
+<h1>ELENCO MACCHINE</h1>
+
+<head>
+	<link rel="stylesheet" href="../../assets/styles/carstyle.css" type="text/css">
+	<style>
+		table, th {
+		border: 2px solid black;
+		}
+	</style>
+</head>
+
+<body>
+
+	<table style="width:100%">
+		<tr>
+			<th>Marca</th>
+			<th>Modello</th>
+			<th>Tipo</th>
+			<th>Carburazione</th>
+			<th>Prezzo</th>
+			<td align="center" style="font-weight:bold">Azione</td>
+		</tr>
+		<% userCars.forEach(function(cars)  { %>
+		<tr align="center">
+			<td><hr/><%= cars.marca %><hr/></td>
+			<td><hr/><%= cars.modello %><hr/></td>
+			<td><hr/><%= cars.tipo %><hr/></td>
+			<td><hr/><%= cars.carburazione %><hr/></td>
+			<td><hr/><%= cars.prezzo %> &euro;<hr/></td>
+			<td style="display: block"><hr/><button id="compraBtn">Compra!</button><hr/></td>
+		</tr>
+		<% }); %>
+	</table>
+
+	<div id="myModal" class="modal">
+
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<p>Macchina comprata!</p>
+		</div>
+
+	</div>
+
+	<script>
+		// Get the modal
+		var modal = document.getElementById('myModal');
+
+		// Get the button that opens the modal
+		var btn = document.getElementById("compraBtn");
+
+		// Get the <span> element that closes the modal
+		var span = document.getElementsByClassName("close")[0];
+
+		// When the user clicks on the button, open the modal
+		btn.onclick = function() {
+			modal.style.display = "block";
+		}
+
+		// When the user clicks on <span> (x), close the modal
+		span.onclick = function() {
+			modal.style.display = "none";
+		}
+
+		// When the user clicks anywhere outside of the modal, close it
+		window.onclick = function(event) {
+			if (event.target == modal) {
+				modal.style.display = "none";
+			}
+		}
+	</script>
+
+</body>
